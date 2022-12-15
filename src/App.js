@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Cabecalho from './Cabecalho';
+import Evento from './componentes/Eventos';
+import Formulario from './componentes/Formulario';
+
+// function BemVindo({nome, sobrenome}){ 
+//   return <h2>Bem vindo {nome} {sobrenome}</h2>;
+// } 
+  
+const BemVindo = ({nome, sobrenome}) => {
+  return <h2>Bem vindo {nome} {sobrenome}</h2>;
+}
+
+// class BemVindo extends React.Component{
+//     render(){
+
+//       const {nome, sobrenome} = this.props;
+//       return <h2>Bem vindo {nome} {sobrenome}</h2>;
+//     }
+// }
+
+function cliclando(){
+   return (
+    alert("Hello"));
+}
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <BemVindo nome={"Robert"} sobrenome={"Dutra"}/>
+        <p>Olá</p>
+        <input type={'button' }value={"Clique aqui"} onClick={cliclando}></input>
+        <Cabecalho title ={"Turma BR101"}/>
+        <Evento/>;
+        <Formulario/>
     </div>
   );
 }
